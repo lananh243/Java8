@@ -18,13 +18,13 @@ public class ShopManagement {
             switch (choice) {
                 case 1:
                     boolean isFlag = true;
-                    do {
+                    while (!isFlag) {
                         System.out.println("***********************CUSTOMER MENU******************");
                         System.out.println("1. Danh sách khách hàng");
                         System.out.println("2. Thêm mới khách hàng");
                         System.out.println("3. Thoát");
                         System.out.println("Lựa chọn từ 1 - 3: ");
-                        choiceCus = scanner.nextInt();
+                        int choiceCus = scanner.nextInt();
                         switch (choiceCus) {
                             case 1:
                                 CustomerBusiness.displayCustomers();
@@ -34,12 +34,15 @@ public class ShopManagement {
                                 break;
                             case 3:
                                isFlag = false;
+                               break;
                             default:
                                 System.err.println("Vui lòng chọn từ 1 - 3");
                         }
-                    } while (isFlag = false);
+                    }
                 case 2:
-                    do {
+                    boolean isTest = true;
+
+                    while (!isTest) {
                         System.out.println("*********************CUSTOMER MENU*******************");
                         System.out.println("1. Danh sách đơn hàng");
                         System.out.println("2. Thêm mới đơn hàng");
@@ -66,10 +69,13 @@ public class ShopManagement {
                                 break;
                             case 6:
                                 break;
+                            case 7:
+                                isTest = false;
+                                break;
                             default:
                                 System.err.println("Vui lòng lựa chọn từ 1 - 7");
                         }
-                    }while (choice != 3);
+                    }
                     break;
                 case 3:
                     System.exit(0);
